@@ -32,7 +32,7 @@ false
 
 The name object has only two properties, `fname` and `lname` . Where does the **hasOwnProperty** come form? It comes from **Object's** `[[Prototype]]` . By default, every object has it's own prototype. If we console it, we will see.
 
-![Example - 1](https://github.com/tahsinsiad/Blogs/blob/main/Example1.png?raw=true)
+![Example - 1](https://github.com/tahsinsiad/Blogs/blob/main/OOP%20in%20JS%20(Part%201%20-%20Prototype%20and%20Prototype%20Chaining)/Example1.png?raw=true)
 We saw that a lot of properties under **Object**. All these properties are coming from the global **Object** prototype. But, we can modify it as our own requirements.
 
 ## Modifying the `__proto__/[[Prototype]]` property
@@ -41,10 +41,10 @@ Please see the example below:
 
 ```
 function Person(name, age) {
-    let dog = Object.create(constructorObject);
-    dog.name = name;
-    dog.age = age;
-    return dog;
+    let personObj = Object.create(constructorObject);
+    personObj.name = name;
+    personObj.age = age;
+    return personObj;
 }
 
 let constructorObject = {
@@ -56,7 +56,7 @@ let bingo = Person("Bingo", 54);
 console.log(bingo);
 ```
 
-![Screenshot from 2022-02-28 13-01-57.png](:/1c9c275e38104c37b87b63dfba981e4d)
+![Example - 2](https://github.com/tahsinsiad/Blogs/blob/main/OOP%20in%20JS%20(Part%201%20-%20Prototype%20and%20Prototype%20Chaining)/Example2.png?raw=true)
 
 Notice the `__proto__` property and the speak method? `Object.create` uses the argument passed to it to become the prototype.
 
@@ -140,8 +140,7 @@ That's all for this part. In **Part - 2**, we will move into implement 4 pillars
 
 * * *
 
-==**NOTE:** Following the **ECMAScript** standard, the notation `someObject.[[Prototype]]` is used to designate the prototype of someObject. Since **ECMAScript** 2015, the `[[Prototype]]` is accessed using the accessors `Object.getPrototypeOf()` and `Object.setPrototypeOf()`. This is equivalent to the JavaScript property `__proto__` which is non-standard but de-facto implemented by many browsers.==
+_**NOTE:** Following the **ECMAScript** standard, the notation `someObject.[[Prototype]]` is used to designate the prototype of someObject. Since **ECMAScript** 2015, the `[[Prototype]]` is accessed using the accessors `Object.getPrototypeOf()` and `Object.setPrototypeOf()`. This is equivalent to the JavaScript property `__proto__` which is non-standard but de-facto implemented by many browsers._
 
-==It should not be confused with the `func.prototype` property of functions, which instead specifies the `[[Prototype]]` to be assigned to all instances of objects created by the given function when used as a `constructor`. The `Object.prototype` property represents the Object prototype object==.
-
+_It should not be confused with the `func.prototype` property of functions, which instead specifies the `[[Prototype]]` to be assigned to all instances of objects created by the given function when used as a `constructor`. The `Object.prototype` property represents the Object prototype object._
 * * *
