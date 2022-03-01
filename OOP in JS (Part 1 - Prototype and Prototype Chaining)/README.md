@@ -32,7 +32,7 @@ false
 
 The name object has only two properties, `fname` and `lname` . Where does the **hasOwnProperty** come form? It comes from **Object's** `[[Prototype]]` . By default, every object has it's own prototype. If we console it, we will see.
 
-![Screenshot from 2022-02-28 12-14-27.png](:/1fce89d1de7945a5bc69edc994593caa)
+![Example - 1](https://github.com/tahsinsiad/Blogs/blob/main/Example1.png?raw=true)
 We saw that a lot of properties under **Object**. All these properties are coming from the global **Object** prototype. But, we can modify it as our own requirements.
 
 ## Modifying the `__proto__/[[Prototype]]` property
